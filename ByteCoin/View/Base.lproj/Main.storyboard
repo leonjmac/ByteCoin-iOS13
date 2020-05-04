@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Currency Exchange View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ByteCoin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CurrencyExchangeViewController" customModule="ByteCoin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5TP-yw-RBT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -66,14 +66,25 @@
                                                     <constraint firstAttribute="bottom" secondItem="Qdw-gh-nWc" secondAttribute="bottom" id="KsG-dN-BT0"/>
                                                 </constraints>
                                             </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0lS-uf-jRB">
+                                                <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                <connections>
+                                                    <action selector="toggleCoinType:" destination="BYZ-38-t0r" eventType="touchUpInside" id="emb-AP-9y9"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="Ocx-jo-FtC" secondAttribute="bottom" id="4g7-Ag-CSv"/>
                                             <constraint firstAttribute="trailing" secondItem="Ocx-jo-FtC" secondAttribute="trailing" constant="10" id="Qu0-hp-NgW"/>
                                             <constraint firstItem="Ocx-jo-FtC" firstAttribute="leading" secondItem="y91-qX-d96" secondAttribute="leading" id="YrU-Yp-Yu8"/>
+                                            <constraint firstItem="0lS-uf-jRB" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Ocx-jo-FtC" secondAttribute="trailing" id="ZMJ-vn-iXO"/>
+                                            <constraint firstItem="0lS-uf-jRB" firstAttribute="leading" secondItem="Ocx-jo-FtC" secondAttribute="leading" id="av6-Jb-qxl"/>
+                                            <constraint firstItem="0lS-uf-jRB" firstAttribute="width" secondItem="Qdw-gh-nWc" secondAttribute="width" id="jYJ-Ss-bgJ"/>
                                             <constraint firstItem="Ocx-jo-FtC" firstAttribute="top" secondItem="y91-qX-d96" secondAttribute="top" id="joV-wc-L2Q"/>
+                                            <constraint firstItem="0lS-uf-jRB" firstAttribute="centerY" secondItem="Ocx-jo-FtC" secondAttribute="centerY" id="khf-Cu-zKd"/>
                                             <constraint firstAttribute="height" constant="80" id="pPp-uS-nxw"/>
+                                            <constraint firstItem="0lS-uf-jRB" firstAttribute="height" secondItem="Qdw-gh-nWc" secondAttribute="height" id="w8w-V0-pWM"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -96,6 +107,7 @@
                         <viewLayoutGuide key="safeArea" id="CjI-yV-vnC"/>
                     </view>
                     <connections>
+                        <outlet property="currencyIcon" destination="Qdw-gh-nWc" id="hEM-6k-ZA4"/>
                         <outlet property="currencyLabel" destination="MAn-y0-nXv" id="uCw-hg-vZ9"/>
                         <outlet property="currencyPicker" destination="ct2-jk-pgH" id="nC3-eN-YAY"/>
                         <outlet property="currentValueLabel" destination="N2a-Ax-iRV" id="R6A-1k-FYC"/>
